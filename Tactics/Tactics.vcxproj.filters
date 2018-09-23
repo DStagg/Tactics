@@ -13,5 +13,171 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Data">
+      <UniqueIdentifier>{9186012d-fbbe-4f77-9dbc-6cfdd2c40a78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Debug">
+      <UniqueIdentifier>{07f6e8ad-7ec0-43d7-8419-0895e58f399d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entities">
+      <UniqueIdentifier>{aadc388e-4cd0-450c-a59e-e1f23e7732d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\IO">
+      <UniqueIdentifier>{4cafd8e4-e7c2-43b8-ad2c-dea203dad7d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{eb162049-ce47-4cee-89e7-56c9f86bff37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility">
+      <UniqueIdentifier>{af7b9b1c-340d-4466-9b0a-68c5bda97cc2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\SFMLScene.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Data\Collision.cpp">
+      <Filter>Header Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Data\CompositeTex.cpp">
+      <Filter>Header Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Data\Pair.cpp">
+      <Filter>Header Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Data\SAT.cpp">
+      <Filter>Header Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Data\Shapes.cpp">
+      <Filter>Header Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Data\Trig.cpp">
+      <Filter>Header Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Debug\Console.cpp">
+      <Filter>Header Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Debug\DebugDraw.cpp">
+      <Filter>Header Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Entities\Entity.cpp">
+      <Filter>Header Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\IO\AudioService.cpp">
+      <Filter>Header Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\IO\BinaryFile.cpp">
+      <Filter>Header Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\IO\GUI.cpp">
+      <Filter>Header Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\IO\ImageManager.cpp">
+      <Filter>Header Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\IO\MenuList.cpp">
+      <Filter>Header Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\IO\MouseInput.cpp">
+      <Filter>Header Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\IO\Service.cpp">
+      <Filter>Header Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\IO\TextFile.cpp">
+      <Filter>Header Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utility\Random.cpp">
+      <Filter>Header Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utility\Utility.cpp">
+      <Filter>Header Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Scenes\Scene.cpp">
+      <Filter>Header Files\Scenes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainScene.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\SFMLScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Data\Collision.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Data\CompositeTex.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Data\Grid.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Data\Maths.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Data\Pair.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Data\SAT.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Data\Shapes.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Data\Trig.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Debug\Console.h">
+      <Filter>Header Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Debug\DebugDraw.h">
+      <Filter>Header Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Entities\Entity.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\IO\AudioService.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\IO\BaseFile.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\IO\BinaryFile.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\IO\GUI.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\IO\ImageManager.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\IO\MenuList.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\IO\MouseInput.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\IO\Service.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\IO\TextFile.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\Random.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\Utility.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Scenes\Scene.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

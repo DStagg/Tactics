@@ -76,7 +76,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalLibraryDirectories>C:\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-window-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -84,7 +90,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-window-d.lib;sfml-system-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -94,10 +105,13 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalLibraryDirectories>C:\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -115,6 +129,56 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Framework\Data\Collision.cpp" />
+    <ClCompile Include="Framework\Data\CompositeTex.cpp" />
+    <ClCompile Include="Framework\Data\Pair.cpp" />
+    <ClCompile Include="Framework\Data\SAT.cpp" />
+    <ClCompile Include="Framework\Data\Shapes.cpp" />
+    <ClCompile Include="Framework\Data\Trig.cpp" />
+    <ClCompile Include="Framework\Debug\Console.cpp" />
+    <ClCompile Include="Framework\Debug\DebugDraw.cpp" />
+    <ClCompile Include="Framework\Entities\Entity.cpp" />
+    <ClCompile Include="Framework\IO\AudioService.cpp" />
+    <ClCompile Include="Framework\IO\BinaryFile.cpp" />
+    <ClCompile Include="Framework\IO\GUI.cpp" />
+    <ClCompile Include="Framework\IO\ImageManager.cpp" />
+    <ClCompile Include="Framework\IO\MenuList.cpp" />
+    <ClCompile Include="Framework\IO\MouseInput.cpp" />
+    <ClCompile Include="Framework\IO\Service.cpp" />
+    <ClCompile Include="Framework\IO\TextFile.cpp" />
+    <ClCompile Include="Framework\Scenes\Scene.cpp" />
+    <ClCompile Include="Framework\SFMLScene.cpp" />
+    <ClCompile Include="Framework\Utility\Random.cpp" />
+    <ClCompile Include="Framework\Utility\Utility.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Framework\Data\Collision.h" />
+    <ClInclude Include="Framework\Data\CompositeTex.h" />
+    <ClInclude Include="Framework\Data\Grid.h" />
+    <ClInclude Include="Framework\Data\Maths.h" />
+    <ClInclude Include="Framework\Data\Pair.h" />
+    <ClInclude Include="Framework\Data\SAT.h" />
+    <ClInclude Include="Framework\Data\Shapes.h" />
+    <ClInclude Include="Framework\Data\Trig.h" />
+    <ClInclude Include="Framework\Debug\Console.h" />
+    <ClInclude Include="Framework\Debug\DebugDraw.h" />
+    <ClInclude Include="Framework\Entities\Entity.h" />
+    <ClInclude Include="Framework\IO\AudioService.h" />
+    <ClInclude Include="Framework\IO\BaseFile.h" />
+    <ClInclude Include="Framework\IO\BinaryFile.h" />
+    <ClInclude Include="Framework\IO\GUI.h" />
+    <ClInclude Include="Framework\IO\ImageManager.h" />
+    <ClInclude Include="Framework\IO\MenuList.h" />
+    <ClInclude Include="Framework\IO\MouseInput.h" />
+    <ClInclude Include="Framework\IO\Service.h" />
+    <ClInclude Include="Framework\IO\TextFile.h" />
+    <ClInclude Include="Framework\Scenes\Scene.h" />
+    <ClInclude Include="Framework\SFMLScene.h" />
+    <ClInclude Include="Framework\Utility\Random.h" />
+    <ClInclude Include="Framework\Utility\Utility.h" />
+    <ClInclude Include="MainScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
