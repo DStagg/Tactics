@@ -4,6 +4,7 @@ MainScene::MainScene(sf::RenderWindow* rw) : SFMLScene(rw)
 {
 	
 };
+
 MainScene::~MainScene()
 {
 
@@ -30,18 +31,22 @@ void MainScene::Begin()
 	_UnitMap.AddUnit(2, 0, temp);
 
 };
+
 void MainScene::End()
 {
 
 };
+
 void MainScene::Pause()
 {
 
 };
+
 void MainScene::Resume()
 {
 
 };
+
 void MainScene::Update(float dt)
 {
 	sf::Event Event;
@@ -107,6 +112,7 @@ void MainScene::Update(float dt)
 			_UnitMap.DelUnit(_UnitMap.GetCoord(i)._X, _UnitMap.GetCoord(i)._Y);
 	}
 };
+
 void MainScene::DrawScreen()
 {
 	//	Set the camera view for unit & map rendering
@@ -149,6 +155,8 @@ void MainScene::ProcessAction(Action a)
 	if (a._Type == "SELECT_TILE")
 	{
 		if ((a._TargetX < 0) || (a._TargetY < 0))	//	TODO: Check for outside of map bounds
+			_SelectedTile = Coord(-1, -1);
+		else if ((_SelectedTile != Coord(-1, -1)) && (_UnitMap.Occupied(a._SourceX, a._SourceY)) && (!_UnitMap.Occupied(a._TargetX, a._TargetY)))
 			_SelectedTile = Coord(-1, -1);
 		else
 			_SelectedTile = Coord(a._TargetX, a._TargetY);
