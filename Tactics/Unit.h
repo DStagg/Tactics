@@ -22,6 +22,11 @@ struct Stat
 		_Current = _Base;
 	};
 
+	void Mod(int m)
+	{
+		_Current += m;
+	};
+
 };
 
 class Unit

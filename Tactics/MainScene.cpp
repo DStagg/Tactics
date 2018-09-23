@@ -22,6 +22,8 @@ void MainScene::Begin()
 	
 	//	Load test data into the unit list
 	GraphicUnit temp;
+	temp.GetHP() = Stat(1);
+	temp.GetAtk() = Stat(1);
 	temp.SetSprite(sf::Sprite(*_ImgMan.GetTexturePntr("DEFAULT")));
 	_UnitMap.AddUnit(1, 1, temp);
 	_UnitMap.AddUnit(3, 2, temp);
@@ -90,8 +92,8 @@ void MainScene::Update(float dt)
 				{
 					if (_UnitMap.Occupied(_SelectedTile._X, _SelectedTile._Y))						//	Move the selected unit (does not currently check if the destination square is occupied)
 					{
-						_ActionQueue.QueueAction("MOVE_UNIT", _SelectedTile._X, _SelectedTile._Y, col, row);
-						_ActionQueue.QueueAction("SELECT_TILE", _SelectedTile._X, _SelectedTile._Y, col, row);
+						_ActionQueue.QueueAction("TRY_MOVE", _SelectedTile._X, _SelectedTile._Y, col, row);
+						_ActionQueue.QueueAction("SELECT_TILE", _SelectedTile._X, _SelectedTile._Y, -1, -1);
 					}
 				}
 			}
@@ -99,7 +101,11 @@ void MainScene::Update(float dt)
 	}
 	while (_ActionQueue.CountActions() > 0)
 		ProcessAction(_ActionQueue.PopAction());
-
+	for (int i = 0; i < _UnitMap.CountUnits(); i++)
+	{
+		if (!_UnitMap.GetUnit(i).GetAlive())
+			_UnitMap.DelUnit(_UnitMap.GetCoord(i)._X, _UnitMap.GetCoord(i)._Y);
+	}
 };
 void MainScene::DrawScreen()
 {
@@ -142,22 +148,45 @@ void MainScene::ProcessAction(Action a)
 {
 	if (a._Type == "SELECT_TILE")
 	{
-		if (!((a._TargetX < 0) || (a._TargetY < 0)))	//	TODO: Check for outside of map bounds
+		if ((a._TargetX < 0) || (a._TargetY < 0))	//	TODO: Check for outside of map bounds
+			_SelectedTile = Coord(-1, -1);
+		else
 			_SelectedTile = Coord(a._TargetX, a._TargetY);
 	}
 	else if (a._Type == "MOVE_UNIT")
 	{
+		if ((a._SourceX == a._TargetX) && (a._SourceY == a._TargetY)) return;
+
 		GraphicUnit temp = _UnitMap.UnitAt(a._SourceX, a._SourceY);
 		_UnitMap.DelUnit(a._SourceX, a._SourceY);
 		_UnitMap.AddUnit(a._TargetX, a._TargetY, temp);
 		_ActionQueue.QueueAction("SELECT_TILE", _SelectedTile._X, _SelectedTile._Y, a._TargetX, a._TargetY);
 	}
+	else if (a._Type == "ATTACK_UNIT")
+	{
+		if (!_UnitMap.Occupied(a._SourceX, a._SourceY)) return;
+		if (!_UnitMap.Occupied(a._TargetX, a._TargetY)) return;
+		if ((a._SourceX == a._TargetX) && (a._SourceY == a._TargetY)) return;
+
+		int dmg = _UnitMap.UnitAt(a._SourceX, a._SourceY).GetAtk()._Current - _UnitMap.UnitAt(a._TargetX, a._TargetY).GetDef()._Current;
+		_UnitMap.UnitAt(a._TargetX, a._TargetY).GetHP().Mod(-dmg);
+		if (_UnitMap.UnitAt(a._TargetX, a._TargetY).GetHP()._Current <= 0) _UnitMap.UnitAt(a._TargetX, a._TargetY).GetAlive() = false;
+	}
+	else if (a._Type == "TRY_MOVE")
+	{
+		if (!_UnitMap.Occupied(a._SourceX, a._SourceY)) return;
+		if ((a._SourceX == a._TargetX) && (a._SourceY == a._TargetY)) return;
+		
+		if (_UnitMap.Occupied(a._TargetX, a._TargetY))
+			_ActionQueue.QueueAction("ATTACK_UNIT", a._SourceX, a._SourceY, a._TargetX, a._TargetY);
+		else
+			_ActionQueue.QueueAction("MOVE_UNIT", a._SourceX, a._SourceY, a._TargetX, a._TargetY);
+	}
 
 
 
 
 
 
-
-	std::cout << _ActionQueue.CountActions() << std::endl;
+	
 };
