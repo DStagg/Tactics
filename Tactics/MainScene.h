@@ -10,6 +10,15 @@
 #include "Framework\IO\ImageManager.h"
 #include "Framework\IO\MouseInput.h"
 
+#include "GraphicUnit.h"
+#include "Coord.h"
+#include "UnitMap.h"
+
+#include "ActionQueue.h"
+
+#define Tile_Width 32
+#define Tile_Height 32
+
 class MainScene : public SFMLScene
 {
 public:
@@ -25,8 +34,19 @@ public:
 	void DrawScreen();
 
 private:
+	
+	ActionQueue _ActionQueue;
 
-
+	ImageManager _ImgMan;
+	SFMLMouseInput _MouseInput;
+	
+	UnitMap _UnitMap;
+	Coord _SelectedTile;
+	
+	sf::View _CameraView;
+	int _CameraPanX, _CameraPanY;
+	
+	void ProcessAction(Action a);
 };
 
 #endif

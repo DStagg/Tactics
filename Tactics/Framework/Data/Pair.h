@@ -21,6 +21,7 @@ struct Pair
 
 	T _A;
 	T _B;
+
 };
 
 typedef Pair<float> PairFloat;

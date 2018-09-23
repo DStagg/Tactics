@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ActionQueue.cpp" />
     <ClCompile Include="Framework\Data\Collision.cpp" />
     <ClCompile Include="Framework\Data\CompositeTex.cpp" />
     <ClCompile Include="Framework\Data\Pair.cpp" />
@@ -150,10 +151,15 @@
     <ClCompile Include="Framework\SFMLScene.cpp" />
     <ClCompile Include="Framework\Utility\Random.cpp" />
     <ClCompile Include="Framework\Utility\Utility.cpp" />
+    <ClCompile Include="GraphicUnit.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainScene.cpp" />
+    <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="UnitMap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ActionQueue.h" />
+    <ClInclude Include="Coord.h" />
     <ClInclude Include="Framework\Data\Collision.h" />
     <ClInclude Include="Framework\Data\CompositeTex.h" />
     <ClInclude Include="Framework\Data\Grid.h" />
@@ -178,7 +184,10 @@
     <ClInclude Include="Framework\SFMLScene.h" />
     <ClInclude Include="Framework\Utility\Random.h" />
     <ClInclude Include="Framework\Utility\Utility.h" />
+    <ClInclude Include="GraphicUnit.h" />
     <ClInclude Include="MainScene.h" />
+    <ClInclude Include="Unit.h" />
+    <ClInclude Include="UnitMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

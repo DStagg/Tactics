@@ -102,6 +102,18 @@
     <ClCompile Include="Framework\Scenes\Scene.cpp">
       <Filter>Header Files\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicUnit.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitMap.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionQueue.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainScene.h">
@@ -178,6 +190,21 @@
     </ClInclude>
     <ClInclude Include="Framework\Scenes\Scene.h">
       <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicUnit.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Coord.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitMap.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionQueue.h">
+      <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

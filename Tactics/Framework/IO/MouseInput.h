@@ -11,6 +11,7 @@ public:
 	virtual PairInt GetScreenPos() = 0;
 	virtual PairInt GetWindowPos() = 0;
 	virtual PairInt GetWorldPos() = 0;
+
 };
 
 class SFMLMouseInput
